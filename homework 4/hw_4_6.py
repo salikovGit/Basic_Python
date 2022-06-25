@@ -11,16 +11,26 @@
 '''
 
 
-from itertools import cycle
-from itertools import count
+import itertools
+
+
+l1 = [1, 2, 3]
+l2 = itertools.cycle(l1)
+count = 0
+for i in l2:
+    if count > 15:
+        break
+    else:
+        print(i, end=" ")
+        count += 1
 
 
 start = 5
 
 
 def int_generator(start):
-    for i in count(start):
-        if i < 10:
+    for i in itertools.count(start):
+        if i < 11:
             print(i)
 
 
